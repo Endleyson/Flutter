@@ -1,0 +1,4 @@
+https://api.giphy.com/v1/gifs/trending?api_key=ojWLDrpiGLhlJuKPJXs1VFpKUfwk1cGr&limit=25&rating=G
+
+https://api.giphy.com/v1/gifs/search?api_key=ojWLDrpiGLhlJuKPJXs1VFpKUfwk1cGr&q=&limit=25&offset=25&rating=G&lang=en
+https://api.giphy.com/v1/gifs/search?api_key=ojWLDrpiGLhlJuKPJXs1VFpKUfwk1cGr&q=&limit=25&offset=25&rating=G&lang=pt
