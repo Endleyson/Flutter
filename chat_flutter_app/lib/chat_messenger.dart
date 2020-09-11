@@ -9,7 +9,6 @@ class ChatMessage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-
       child: Row(
         children: <Widget>[
           !mine ?
@@ -31,13 +30,16 @@ class ChatMessage extends StatelessWidget {
                 Text(data['text'],
                   textAlign: mine ? TextAlign.end : TextAlign.start,
                   style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600,),
+                    fontSize: 24,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.green[900],
+                  ),
                 ),
                 Text(
                   data['senderName'],
                   style: TextStyle(
                     fontSize: 12,
+                    color: Colors.green[600],
 
                   ),
                 )
@@ -53,6 +55,8 @@ class ChatMessage extends StatelessWidget {
           ) : Container(),
         ],
       ),
+
+
     );
   }
 }

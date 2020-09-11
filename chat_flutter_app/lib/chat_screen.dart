@@ -60,7 +60,7 @@ class _ChatScreenState extends State<ChatScreen> {
       "time": Timestamp.now(),
     };
     if(imgFile != null) {
-      StorageUploadTask task = FirebaseStorage.instance.ref().child('img').child(
+      StorageUploadTask task = FirebaseStorage.instance.ref().child('uid').child(
           DateTime
               .now()
               .millisecondsSinceEpoch
@@ -83,6 +83,7 @@ class _ChatScreenState extends State<ChatScreen> {
   }
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       key: _scafoldkey,
       appBar: AppBar(
@@ -106,9 +107,17 @@ class _ChatScreenState extends State<ChatScreen> {
               }) : Container()
         ],
         ),
-      body: Column(
-        children: <Widget>[
+      body:  Container(
+        decoration:BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage('images/background.jpg'), fit: BoxFit.fill,
+          ),
+        ),
+         child: Column(
+          children: <Widget>[
+
           Expanded(
+
             child: StreamBuilder<QuerySnapshot>(
               stream: Firestore.instance.collection('messages').orderBy("time").snapshots(),
               builder: (context, snapshot){
@@ -133,12 +142,18 @@ class _ChatScreenState extends State<ChatScreen> {
               },
             ),
           ),
-        _isloading ? LinearProgressIndicator(backgroundColor: Colors.greenAccent) : Container(),
-        TextComposer(_sendMessage),
 
-        ]
+          _isloading ? LinearProgressIndicator() : Container(),
+          TextComposer(_sendMessage),
+
+
+        ],
+
+      ),
+
       ),
     );
+
    }
   }
 

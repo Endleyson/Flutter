@@ -16,9 +16,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primaryColor: Colors.green[900],
-        iconTheme: IconThemeData(
+          hintColor: Colors.green[700],
+          iconTheme: IconThemeData(
           color:  Colors.green[800],
-        )
+          )
       ),
       home: ChatScreen(),
     );
