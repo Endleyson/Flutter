@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:rive/rive.dart';
-
+import 'dart:async';
+import 'package:splash_screen_app/home.dart';
 void main() {
   runApp(MyApp());
 }
-
+//raiz da aplicação
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Splash(),
-      debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: false, //tira o banner de debug
     );
   }
 }
@@ -22,9 +23,9 @@ class Splash extends StatefulWidget {
   @override
   _SplashState createState() => _SplashState();
 }
-
+//tela splash com animação com  rive
 class _SplashState extends State<Splash> {
-  @override
+   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
@@ -41,8 +42,7 @@ class _SplashState extends State<Splash> {
                         fontSize: 30,
                         color: Colors.white,
                       )),
-                  padding: EdgeInsets.only(
-                      left: 35.0, top: 125.0, right: 35.0, bottom: 35.0),
+                    padding: EdgeInsets.only(left: 35.0,top: 125.0,right: 35.0,bottom: 35.0),
                 ),
                 Container(
                   width: 150,
@@ -64,6 +64,17 @@ class _SplashState extends State<Splash> {
               ],
             ),
           )),
+    );
+  }
+
+  @override
+  // função que determina o tempo da troca das telas
+  void initState() {
+    super.initState();
+    Future.delayed(Duration(seconds: 4)).then((value)=>
+      Navigator.of(context).pushReplacement(
+      MaterialPageRoute(builder: (context)=>Home())
+      ),
     );
   }
 }

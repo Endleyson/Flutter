@@ -1,3 +1,5 @@
+//Aqui entra a tela principal do app
+
 import 'package:flutter/material.dart';
 import 'package:rive/rive.dart';
 
@@ -8,13 +10,13 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Aplicação"),
+        title: Text("AppBar Aplicação"),
         textTheme:
-        TextTheme(title: TextStyle(color: Colors.white, fontSize: 28)),
+        TextTheme(title: TextStyle(color: Colors.white, fontSize: 28,)),
         backgroundColor: Colors.indigo[700],
         centerTitle: true,
       ),
-      backgroundColor: Colors.indigo[400],
+      backgroundColor: Colors.indigo[800],
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
