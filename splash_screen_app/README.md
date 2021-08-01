@@ -1,16 +1,23 @@
-# splash_screen_app
+![GitHub top language](https://img.shields.io/github/languages/top/endleyson/Flutter?style=for-the-badge)
+![GitHub language count](https://img.shields.io/github/languages/count/endleyson/flutter?color=1&style=for-the-badge)
+# Splash_Screen
 
-A new Flutter application.
+<p align="center">
+  <img align="center" alt="splash-screen" width="450" height="650" src="to_readme/SplashScreen.gif" style="max-width:100%;max-height:100%;">
+</p>
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+## Descrição
+* *Tela de splash desenvolvida com a [Flutter](https://flutter.dev/) que simula um carregamento de uma aplicação, após o carregamento, ela transiciona para a tela principal do app.
+* Para as animações das engrenagens e do "joinha" foi utilizado a ferramenta [Rive](https://rive.app/) que permite a edição da animação e disponibiliza um pacote
+para o [Flutter](https://flutter.dev/) facilitando a implementação.*
 
-A few resources to get you started if this is your first Flutter project:
+<p align="center">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="flutter" widtf="40" height="40" style="max-width:100%;margin: 0 2px;"></img>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" alt="dart" widtf="40" height="40" style="max-width:100%;margin: 0 2px;"></img>
+</p>
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+### Package
+- flutter
+- rive: ^0.7.22
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
