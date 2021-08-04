@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 //Feito por Endleyson Reis Duarte dos Santos
 //exercicio curso de flutter 
 
-void main() {
+void main() { //função principal que chama o app
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
     home: Home(),
@@ -20,11 +20,11 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
 
 
-  TextEditingController pesoControl = TextEditingController();
+  TextEditingController pesoControl = TextEditingController();//resposnavel por pegar as informações digitadas 
   TextEditingController alturaControl = TextEditingController();
-  GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  GlobalKey<FormState> _formKey = GlobalKey<FormState>(); // responsavel pela validação
   String _infoText= "Informe seus dados";
-
+// função que reseta (limpa) os dados na tela
   void _reset() {
     pesoControl.text = "";
     alturaControl.text="";
@@ -34,6 +34,7 @@ class _HomeState extends State<Home> {
     });
 
   }
+  // função que calcula o IMC
   void _calculate(){
     setState((){
         double peso = double.parse(pesoControl.text);
@@ -56,7 +57,7 @@ class _HomeState extends State<Home> {
 
   }
 
-
+  //construtor do app
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -86,8 +87,8 @@ class _HomeState extends State<Home> {
                   ),
                   textAlign: TextAlign.center,
                   style: TextStyle(color: Colors.green, fontSize: 20.0),
-                  controller: pesoControl,
-                  validator: (value){
+                  controller: pesoControl, //controlador do TextEditingController
+                  validator: (value){ //função do validaor
                     if(value.isEmpty){
                       return "Insira seu peso!";
                    }
