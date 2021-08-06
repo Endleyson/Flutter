@@ -24,9 +24,10 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   List _toDoList = [];
-  Map<String, dynamic> _lastRemoved;
-  int _lastRemovedPos;
+  Map<String, dynamic> _lastRemoved;//mapa do ultimo item removido
+  int _lastRemovedPos;//armazenara a posição que foi removido o item 
 
+  // metodo que sobrescreve e faz a leitura dos dados
   @override
   void initState() {
     super.initState();
@@ -37,8 +38,8 @@ class _HomeState extends State<Home> {
     });
   }
 
-  final _toDoController = TextEditingController();
-
+  final _toDoController = TextEditingController();// controlador do texto
+  //função que adiciona os itens na lista
   void _addToDo() {
     setState(() {
       Map<String, dynamic>newToDo = Map();
@@ -56,7 +57,7 @@ class _HomeState extends State<Home> {
     });
   }
 
-
+    //função responsavel pelo refresh da tela
     Future<Null> _refresh() async {
       await Future.delayed(Duration(seconds: 1));
       setState(() {
@@ -106,8 +107,8 @@ class _HomeState extends State<Home> {
               ),
             ),
             Expanded(
-              child: RefreshIndicator(onRefresh: _refresh,
-                  child: ListView.builder(
+              child: RefreshIndicator(onRefresh: _refresh,//
+                  child: ListView.builder(//widget resposnsavel por gerar a lista
                     padding: EdgeInsets.only(top: 10.0),
                     itemCount: _toDoList.length,
                     itemBuilder: buildItem,)
@@ -123,13 +124,14 @@ class _HomeState extends State<Home> {
         ),
       );
     }
-
+    //função que cria a lista e os parametros do funcionamento
     Widget buildItem(context, index) {
-      return Dismissible(
-        key: Key(DateTime
+      return Dismissible(//widget que permite arrasta os itens
+        key: Key(DateTime//parametro para saber qual itens esta sendo deslizado
             .now()
             .millisecondsSinceEpoch
             .toString()),
+        //cor de fundo e posição do icone quando arrastar o item
         background: Container(
           color: Colors.red,
           child: Align(
@@ -137,13 +139,13 @@ class _HomeState extends State<Home> {
             child: Icon(Icons.delete, color: Colors.white,),
           ),
         ),
-        direction: DismissDirection.startToEnd,
-        child: CheckboxListTile(
+        direction: DismissDirection.startToEnd,//direção para onde arrastar o item
+        child: CheckboxListTile(//ListTitle com um botão de check
           title: Text(_toDoList[index]["title"]),
           value: _toDoList[index]["ok"],
           secondary: CircleAvatar(
             child: Icon(_toDoList[index]["ok"] ?
-            Icons.check : Icons.error,),),
+            Icons.check : Icons.error,),),// verifica qual a condição do botao check e troca o simbolo do icone
           onChanged: (c) {
             setState(() {
               _toDoList[index]["ok"] = (c);
@@ -151,12 +153,14 @@ class _HomeState extends State<Home> {
             });
           },
         ),
+        // função que deleta o item quando deslizado, 
         onDismissed: (direction) {
           setState(() {
             _lastRemoved = Map.from(_toDoList[index]);
             _lastRemovedPos = index;
             _toDoList.removeAt(index);
             _saveData();
+            //snack bar com função caso queira desfazer a ação
             final snack = SnackBar(
               content: Text("Tarefa \"${_lastRemoved["title"]}\" removida"),
               action: SnackBarAction(label: "Desfazer",
@@ -168,25 +172,25 @@ class _HomeState extends State<Home> {
                 },),
               duration: Duration(seconds: 3),
             );
-            Scaffold.of(context).removeCurrentSnackBar();
-            Scaffold.of(context).showSnackBar(snack);
+            Scaffold.of(context).removeCurrentSnackBar();//remove a snack atual
+            Scaffold.of(context).showSnackBar(snack);//mostra a snackbar nova
           });
         },
       );
     }
-/*  */
 
+    //função que pega o arquivo no diretório
     Future<File> _getFile() async {
       final directory = await getApplicationDocumentsDirectory();
       return File("${directory.path}/data.jason");
     }
-
+    //função responsavel por salvar o arquivo no diretório
     Future<File> _saveData() async {
       String data = json.encode(_toDoList);
       final file = await _getFile();
       return file.writeAsString(data);
     }
-
+    //função responsavel pela leitura do arquivo
     Future<String> _readData() async {
       try {
         final file = await _getFile();
