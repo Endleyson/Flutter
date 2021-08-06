@@ -50,6 +50,7 @@ class _HomeState extends State<Home> {
       _saveData();
     });
   }
+  //função que limpa a lista
   void _cls(){
     setState(() {
       _toDoList = [];
