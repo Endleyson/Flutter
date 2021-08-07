@@ -17,6 +17,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   String _search;
   int _offset = 0;
+  //função que faz a requisição a API
   Future<Map> _getGifs() async{
     http.Response response;
     if(_search == null || _search.isEmpty)//
@@ -26,7 +27,7 @@ class _HomePageState extends State<HomePage> {
 
     return json.decode(response.body);
   }
-
+  //função que pega os gifs
   @override
   void initState(){
     super.initState();
@@ -56,7 +57,7 @@ class _HomePageState extends State<HomePage> {
               ),
               style: TextStyle(color: Colors.white, fontSize: 18.0),
               textAlign: TextAlign.center,
-              onSubmitted:(text) {
+              onSubmitted:(text) {//chama o texto digitado quando damos o ok
                 setState(() {
                   _search = text;
                   _offset = 0;
@@ -66,14 +67,15 @@ class _HomePageState extends State<HomePage> {
 
           ),
           ),
+          //widget responsavel por mostrar a grade de gifs
           Expanded(
             child: FutureBuilder(
               future: _getGifs(),
               builder: (context, snapshot){
-                switch(snapshot.connectionState){
+                switch(snapshot.connectionState){//verifica o stado da conexão
                   case ConnectionState.waiting:
                     case ConnectionState.none:
-                      return Container(
+                      return Container(//constroi o indicador cricular
                         width: 200.00,
                         height: 200.00,
                         alignment: Alignment.center,
@@ -96,6 +98,7 @@ class _HomePageState extends State<HomePage> {
       )
     );
   }
+  //responsavel pelo numero de gifs a ser apresentado no grid
   int _getCount(List data) {
   if(_search == null || _search.isEmpty) {
     return data.length;
@@ -104,19 +107,21 @@ class _HomePageState extends State<HomePage> {
     return data.length +1;
   }
 }
+//widget responsavel por criar a tabela de gifs
 Widget _creatGifTable(BuildContext, AsyncSnapshot snapshot) {
   return GridView.builder(
       padding: EdgeInsets.all(10.0),
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(//responsavel pelo layout do grid
         crossAxisCount: 2,
         crossAxisSpacing: 10.0,
         mainAxisSpacing: 10.0,
       ),
       itemCount:_getCount(snapshot.data["data"]),
       itemBuilder: (context, index){
+        //condição resposavel em mostrar os 25 melhores gifs ou caso esteja pesquisando mostrar ao final o botão para carregar
         if(_search == null || index< snapshot.data["data"].length)
-          return GestureDetector(
-            child: FadeInImage.memoryNetwork(
+          return GestureDetector(//gestureDetector é responsavel por "detectar os gestos na tela"
+            child: FadeInImage.memoryNetwork(//FadeImage responsavel por suavizar o aparecimento das imagens
                 placeholder: kTransparentImage,
                 image: snapshot.data["data"][index]["images"]["fixed_height"]["url"],
                 height: 300.0,
@@ -124,7 +129,7 @@ Widget _creatGifTable(BuildContext, AsyncSnapshot snapshot) {
           ),
             onTap: (){
               Navigator.push(context,
-              MaterialPageRoute(builder: (context)=>GifPage(snapshot.data["data"][index])));
+              MaterialPageRoute(builder: (context)=>GifPage(snapshot.data["data"][index])));// responsavel pela rota da pagina gif_page
             },
             onLongPress: (){
               Share.share(snapshot.data["data"][index]["images"]["fixed_height"]["url"]);
@@ -141,6 +146,7 @@ Widget _creatGifTable(BuildContext, AsyncSnapshot snapshot) {
                   style: TextStyle(color: Colors.white, fontSize: 22.0),)
                 ],
               ),
+                  // função que carrega mais 25 quando tocar no botão carregar mais
                   onTap: (){
                 setState(() {
                   _offset += 25;

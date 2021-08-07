@@ -1,7 +1,7 @@
 //Desenvolvido por Endleyson Reis Duarte dos Sanots
 //Exercicio Curso de Flutter
 import 'package:flutter/material.dart';
-import 'package:share/share.dart';
+import 'package:share/share.dart';//plugin responsavel pelo compartilhamento
 class GifPage extends StatelessWidget {
   final Map _gifData;
   GifPage(this._gifData);
