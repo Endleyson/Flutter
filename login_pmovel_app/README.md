@@ -1,16 +1,18 @@
+![GitHub top language](https://img.shields.io/github/languages/top/endleyson/Flutter?style=for-the-badge)
+![GitHub language count](https://img.shields.io/github/languages/count/endleyson/flutter?color=1&style=for-the-badge)
+
 # login_pmovel_app
+<p align="center">
+  <img align="center" alt="splash-screen" width="450" height="650" src="to_readme/tela_original.jpg" style="max-width:100%;max-height:100%;" text="Tela Original do APP">
+  <img align="center" alt="splash-screen" width="450" height="650" src="to_readme/recriado.png" style="max-width:100%;max-height:100%;" text="Tela Recriada">
+ </p>
+ <p align="center">Tela Original do APP  /  Tela Recriada</>
 
-A new Flutter project.
 
-## Getting Started
+## Descrição
+* *Desenvolvido com [Flutter](https://flutter.dev/), o objetivo era recriar a tela de login baseada no app da [Pmovel](https://www.pmovel.com/)*
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<p>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="flutter" widtf="60" height="60" style="max-width:100%;margin: 0 2px;"></img>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" alt="dart" widtf="60" height="60" style="max-width:100%;margin: 0 2px;"></img>
+</p>
