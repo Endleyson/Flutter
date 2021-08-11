@@ -4,7 +4,7 @@
 # login_pmovel_app
 <p align="center">
   <img align="center" alt="splash-screen" width="450" height="650" src="to_readme/tela_original.jpg" style="max-width:100%;max-height:100%;" text="Tela Original do APP">
-  <img align="center" alt="splash-screen" width="450" height="650" src="to_readme/recriado.png" style="max-width:100%;max-height:100%;" text="Tela Recriada">
+  <img align="center" alt="splash-screen" width="450" height="650" src="to_readme/recriado1.png" style="max-width:100%;max-height:100%;" text="Tela Recriada">
  </p>
  <p align="center">Tela Original do APP  /  Tela Recriada</>
 
