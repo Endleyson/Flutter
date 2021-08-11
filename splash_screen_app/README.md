@@ -8,8 +8,8 @@
 
 
 ## Descrição
-* *Tela de splash desenvolvida com a [Flutter](https://flutter.dev/) que simula um carregamento de uma aplicação, após o carregamento, ela transiciona para a tela principal do app.
-* Para as animações das engrenagens e do "joinha" foi utilizado a ferramenta [Rive](https://rive.app/) que permite a edição da animação e disponibiliza um pacote
+* *Tela de splash desenvolvida com [Flutter](https://flutter.dev/) que simula um carregamento de uma aplicação, após o carregamento, ela transiciona para a tela principal do app.*
+* *Para as animações das engrenagens e do "joinha" foi utilizado a ferramenta [Rive](https://rive.app/) que permite a edição da animação e disponibiliza um pacote
 para o [Flutter](https://flutter.dev/) facilitando a implementação.*
 
 <p align="center">
