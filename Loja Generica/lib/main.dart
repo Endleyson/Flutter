@@ -8,7 +8,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Minha Loja',
       theme: ThemeData(
-        primaryColor: Colors.pink[400],
+        primarySwatch: Colors.pink,
+        accentColor: Colors.pinkAccent,
+        fontFamily: 'Lato'
       ),
       home: ProductsOverviewScreen(),
     );

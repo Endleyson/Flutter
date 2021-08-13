@@ -10,6 +10,7 @@ class ProductsOverviewScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Colors.pink[100],
         appBar: AppBar(
           title: Text("Na Loja"),
           centerTitle: true,
