@@ -1,3 +1,4 @@
+import '../views/product_detail_screen.dart';
 import 'package:flutter/material.dart';
 import '../models/product.dart';
 
@@ -10,10 +11,20 @@ class ProductItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return ClipRRect(//responsavel por fazer as bordas arredondadas do gritle
         borderRadius: BorderRadius.circular(10),
-        child: GridTile(//responsavel por renderizar o grid dos produtos
-          child: Image.network(
-            product.imageUrl,
-            fit: BoxFit.cover,
+        child: GridTile(
+          //responsavel por renderizar o grid dos produtos
+          child: GestureDetector(
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                    builder: (context) => ProductDetailScreen(product)
+                ),
+              );
+            },
+            child: Image.network(
+              product.imageUrl,
+              fit: BoxFit.cover,
+            ),
           ),
           footer: GridTileBar(
             backgroundColor: Colors.black87,
@@ -36,6 +47,7 @@ class ProductItem extends StatelessWidget {
               color: Theme.of(context).accentColor,
             ),
           ),
-        ));
+        )
+    );
   }
 }

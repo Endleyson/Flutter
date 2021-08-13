@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import './views/products_overview_screen.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -8,12 +9,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Minha Loja',
       theme: ThemeData(
-        primarySwatch: Colors.pink,
-        accentColor: Colors.pinkAccent,
-        fontFamily: 'Lato'
-      ),
+          primarySwatch: Colors.pink,
+          accentColor: Colors.pinkAccent,
+          fontFamily: 'Lato'),
       home: ProductsOverviewScreen(),
     );
   }
 }
-
