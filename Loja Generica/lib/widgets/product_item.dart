@@ -1,6 +1,7 @@
 import '../views/product_detail_screen.dart';
 import 'package:flutter/material.dart';
 import '../models/product.dart';
+import '../utils/app_routes.dart';
 
 class ProductItem extends StatelessWidget {
   final Product product;
@@ -15,10 +16,9 @@ class ProductItem extends StatelessWidget {
           //responsavel por renderizar o grid dos produtos
           child: GestureDetector(
             onTap: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                    builder: (context) => ProductDetailScreen(product)
-                ),
+              Navigator.of(context).pushNamed(
+                AppRouters.PRODUCT_DETAIL,
+                arguments: product,
               );
             },
             child: Image.network(

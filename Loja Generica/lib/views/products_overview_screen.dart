@@ -12,7 +12,7 @@ class ProductsOverviewScreen extends StatelessWidget {
     return Scaffold(
         backgroundColor: Colors.pink[100],
         appBar: AppBar(
-          title: Text("Na Loja"),
+          title: Text("Home Loja"),
           centerTitle: true,
         ),
         body: GridView.builder(
