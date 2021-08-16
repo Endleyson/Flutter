@@ -2,13 +2,12 @@ import '../../models/product.dart';
 
 final DUMMY_PRODUCTS = [
   Product(
-      id: 'p1',
-      title: 'Red&black Shirt',
-      description: 'A red shirt - it is pretty red!',
-      price: 29.99,
-      imageUrl:
-      'https://static3.tcdn.com.br/img/img_prod/681598/camisa_freeforce_sport_reddish_preta_e_vermelha_ciclismo_5247_1_20190716130500.jpg'
-    //'https://cdn.pixabay.com/photo/2016/10/02/22/17/red-t-shirt-1710578_1280.jpg',
+    id: 'p1',
+    title: 'Red&black Shirt',
+    description: 'A red shirt - it is pretty red!',
+    price: 29.99,
+    imageUrl:
+    'https://static3.tcdn.com.br/img/img_prod/681598/camisa_freeforce_sport_reddish_preta_e_vermelha_ciclismo_5247_1_20190716130500.jpg',
   ),
   Product(
     id: 'p2',
@@ -19,13 +18,12 @@ final DUMMY_PRODUCTS = [
     'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Trousers%2C_dress_%28AM_1960.022-8%29.jpg/512px-Trousers%2C_dress_%28AM_1960.022-8%29.jpg',
   ),
   Product(
-      id: 'p3',
-      title: 'Yellow Scarf',
-      description: 'Warm and cozy - exactly what you need for the winter.',
-      price: 19.99,
-      imageUrl:
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpy-3Cj7VHMM8ZsfKaxIzZR2n8TOl2om-IHQ&usqp=CAU'
-    //'https://live.staticflickr.com/4043/4438260868_cc79b3369d_z.jpg',
+    id: 'p3',
+    title: 'Yellow Scarf',
+    description: 'Warm and cozy - exactly what you need for the winter.',
+    price: 19.99,
+    imageUrl:
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpy-3Cj7VHMM8ZsfKaxIzZR2n8TOl2om-IHQ&usqp=CAU',
   ),
   Product(
     id: 'p4',
@@ -41,13 +39,13 @@ final DUMMY_PRODUCTS = [
     description: 'A red shirt - it is pretty red!',
     price: 29.99,
     imageUrl:
-    'https://cdn.pixabay.com/photo/2016/10/02/22/17/red-t-shirt-1710578_1280.jpg',
+    'https://cdn.awsli.com.br/600x1000/4/4061/produto/15865670/738d3e1ced.jpg',
   ),
   Product(
     id: 'p6',
     title: 'Yellow Scarf',
     description: 'Warm and cozy - exactly what you need for the winter.',
     price: 19.99,
-    imageUrl:'https://live.staticflickr.com/4043/4438260868_cc79b3369d_z.jpg',
+    imageUrl: 'https://img.elo7.com.br/product/original/2E8170E/cachecol-mollet-amarelo-inverno.jpg',
   ),
 ];

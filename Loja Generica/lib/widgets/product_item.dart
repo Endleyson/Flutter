@@ -10,8 +10,7 @@ class ProductItem extends StatelessWidget {
       context,
       listen: false,
     );
-    return ClipRRect(
-        //responsavel por fazer as bordas arredondadas do gritle
+    return ClipRRect(//responsavel por fazer as bordas arredondadas do gridtile
         borderRadius: BorderRadius.circular(10),
         child: GridTile(
           //responsavel por renderizar o grid dos produtos
