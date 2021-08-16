@@ -1,16 +1,17 @@
-import '../views/product_detail_screen.dart';
+import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 import '../models/product.dart';
 import '../utils/app_routes.dart';
 
 class ProductItem extends StatelessWidget {
-  final Product product;
-
-  ProductItem(this.product);
-
   @override
   Widget build(BuildContext context) {
-    return ClipRRect(//responsavel por fazer as bordas arredondadas do gritle
+    final Product product = Provider.of<Product>(
+      context,
+      listen: false,
+    );
+    return ClipRRect(
+        //responsavel por fazer as bordas arredondadas do gritle
         borderRadius: BorderRadius.circular(10),
         child: GridTile(
           //responsavel por renderizar o grid dos produtos
@@ -28,14 +29,20 @@ class ProductItem extends StatelessWidget {
           ),
           footer: GridTileBar(
             backgroundColor: Colors.black87,
-            leading: IconButton(
-              //parte inicial do footer
-              icon: Icon(Icons.favorite),
-              onPressed: () {},
-              color: Theme.of(context).accentColor,
+            //parte inicial do footer
+            leading: Consumer<Product>(
+              builder: (context, product, _) => IconButton(//icone dos favoritos
+                  icon: Icon(product.isFavorite
+                      ? Icons.favorite
+                      : Icons.favorite_border),
+                  onPressed: () {
+                    product.toggleFavorite();
+                  },
+                  color: Colors.pinkAccent //Theme.of(context).accentColor,
+              ),
             ),
             title: Text(
-              //parte cenntral do footer
+              //parte central do footer
               product.title,
               textAlign: TextAlign.center,
               style: TextStyle(color: Theme.of(context).accentColor),
@@ -47,7 +54,6 @@ class ProductItem extends StatelessWidget {
               color: Theme.of(context).accentColor,
             ),
           ),
-        )
-    );
+        ));
   }
 }
