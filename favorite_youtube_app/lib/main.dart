@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import './views/home_screen.dart';
+import 'api.dart';
 void main() {
+  Api api = Api();
+  api.search("eletro");
   runApp(MyApp());
 }
 
