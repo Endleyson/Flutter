@@ -14,10 +14,12 @@ class Api {
   decode(http.Response response) {
     if (response.statusCode == 200) {
       var decoded = json.decode(response.body);
-      List<Video> videos = decoded["items"].map((map) {
+      List<Video> videos = decoded["items"].map<Video>((map) {
         return Video.fromJson(map);
       }).toList();
-      print(videos);
+      return videos;
+    }else{
+      throw Exception("FALHA AO CARREGAR VIDEOS, TENTE NOVAMNETE");
     }
   }
 }
