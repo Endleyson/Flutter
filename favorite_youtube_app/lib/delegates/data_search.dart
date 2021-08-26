@@ -29,6 +29,7 @@ class DataSearch extends SearchDelegate {
 
   @override
   Widget buildResults(BuildContext context) {
+    Future.delayed(Duration.zero).then((_)=>close(context, query));
     return Container();
   }
 
@@ -50,7 +51,9 @@ class DataSearch extends SearchDelegate {
                 return ListTile(
                   title: Text(snapshot.data![index]),
                   leading: Icon(Icons.play_arrow),
-                  onTap: () {},
+                  onTap: () {
+                    close(context, snapshot.data[index]);
+                  },
                 );
               },
               itemCount: snapshot.data!.length,
@@ -65,7 +68,7 @@ class DataSearch extends SearchDelegate {
     http.Response response = await http.get(Uri.parse(
         "http://suggestqueries.google.com/complete/search?hl=en&ds=yt&client=youtube&hjson=t&cp=1&q=$search&format=5&alt=json"));
     if (response.statusCode == 200) {
-      json.decode(response.body)[1].map((v) {
+      return json.decode(response.body)[1].map((v) {
         return v[0];
       }).toList();
     } else {

@@ -1,3 +1,5 @@
+import 'package:bloc_pattern/bloc_pattern.dart';
+import 'package:favorite_youtube_app/blocs/videos_bloc.dart';
 import 'package:favorite_youtube_app/delegates/data_search.dart';
 import 'package:flutter/material.dart';
 
@@ -24,8 +26,11 @@ class Home extends StatelessWidget {
             icon: Icon(Icons.star, color: Colors.black,),
           ),
           IconButton(
-              onPressed: () {
-                showSearch(context: context, delegate: DataSearch());
+              onPressed: () async{
+                String result= await showSearch(context: context, delegate: DataSearch());
+                if(result != null) {
+                  BlocProvider.of<VideosBloc>(context).inSearch.add(result);
+                }
               },
               icon: Icon(Icons.search, color: Colors.black,)
           ),
