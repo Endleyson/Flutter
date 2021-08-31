@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "960145826684",
+    "project_id": "login-screen-with-gfb",
+    "storage_bucket": "login-screen-with-gfb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:960145826684:android:26014f17c15f6cb3ec7af9",
+        "android_client_info": {
+          "package_name": "com.example.login_google"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "960145826684-punv5mu36qs6ck012qmmqs12ipg3fj56.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPBXG48Oxw1RxEzd5zudvnZ-gONjxmlXc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "960145826684-punv5mu36qs6ck012qmmqs12ipg3fj56.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
