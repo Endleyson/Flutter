@@ -18,7 +18,7 @@ class ProductsOverviewScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text("Home Loja"),
         actions: [
-          PopupMenuButton(
+          PopupMenuButton(//ao clicar vc seleciona todos ou somente favoritos
             onSelected: (FilterOptions selectedValue){
               if(selectedValue == FilterOptions.Favorite){
                 products.showFavoriteOnly();
@@ -26,7 +26,7 @@ class ProductsOverviewScreen extends StatelessWidget {
                 products.showAll();
               }
             },
-            icon: Icon(Icons.more_vert),
+            icon: Icon(Icons.more_vert),//icone do popupmenu
             itemBuilder: (_) => [
               PopupMenuItem(
                 child: Text('Somente Favoritos'),
